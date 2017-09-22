@@ -9,7 +9,7 @@ $this->title = 'Ban the Fake News';
     <div class="jumbotron">
         <h1>Ban the Fake News!</h1>
 
-        <p class="lead">En tiempos como el de #SismoCDMX, es necesario deshacernos de las noticias falsas.</p> 
+        <p class="lead">En tiempos como el de #SismoMexico, es necesario deshacernos de las noticias falsas.</p> 
         <p class="lead">Reporta las mismas para tener un control sobre ellas y poder reportarlas a la comunidad.</p>
 
         <p><a class="btn btn-lg btn-primary" href="/report/index">Consultar Noticias Falsas</a></p>

@@ -18,6 +18,9 @@ $config = [
                 'default_graph_version' => 'v2.10',
             ],
         ],
+        'api' => [
+            'class' => 'app\modules\api\Api',
+        ],
     ],
     'components' => [
         'request' => [
@@ -53,12 +56,17 @@ $config = [
         'db' => $db,
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
-            // Hide index.php
+            // Disable index.php
             'showScriptName' => false,
-            // Use pretty URLs
+            // Disable r= routes
             'enablePrettyUrl' => true,
             'rules' => [
-                '<alias:\w+>' => 'site/<alias>',
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                // Here is the mater configuration of URL Management for Modules
+                'api/<module:\w+>/<controller:\w+>/<id:\d+>' => 'api/<module>/<controller>/view',
+                'api/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => 'api/<module>/<controller>/<action>',
             ],
         ],
     ],
