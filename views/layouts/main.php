@@ -37,13 +37,16 @@ AppAsset::register($this);
     ]);
 
     if (Yii::$app->user->isGuest) { 
-        $menuItems[] = ['label' => 'Consultar', 'url' => ['/report/index']];
+        $menuItems[] = ['label' => 'Noticias Falsas', 'url' => ['/report/index']];
+        $menuItems[] = ['label' => 'Necesidades', 'url' => ['/urgency/index']];
         $menuItems[] = ['label' => 'Regístrate', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']]; 
     } else { 
         $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
-        $menuItems[] = ['label' => 'Consultar', 'url' => ['/report/index']];
+        $menuItems[] = ['label' => 'Noticias Falsas', 'url' => ['/report/index']];
+        $menuItems[] = ['label' => 'Necesidades', 'url' => ['/urgency/index']];
         $menuItems[] = ['label' => 'Agregar un Reporte', 'url' => ['/report/create']];
+        $menuItems[] = ['label' => 'Agregar Necesidad', 'url' => ['/urgency/create']];
         $menuItems[] = [ 
             'label' => 'Logout (' . Yii::$app->user->identity->username . ')', 'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post'] 
         ]; 
